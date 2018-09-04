@@ -164,6 +164,10 @@ public class SelectionManager {
         return supported;
     }
 
+    
+    public uri getSelectedUris(){
+    return mCachedShareableUris;
+    }
     public void onClearSelection() {
         mSelectedTotalCount = 0;
         mSelectedShareableCount = 0;
