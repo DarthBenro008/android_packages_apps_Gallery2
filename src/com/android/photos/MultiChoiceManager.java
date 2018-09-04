@@ -163,12 +163,9 @@ public class MultiChoiceManager implements MultiChoiceModeListener,
                     mActionMode.finish();
                     Intent shareIntent = mSelectionManager.getShareIntent();
                     if (shareIntent != null) {
-                      PrintHelper printer = new PrintHelper(this);
-        try {
-            printer.printBitmap("pintJobName",uri );
-        } catch (Exception e) {
-            Log.e("Hi", "Error printing an image");
-        }
+                     Intent intent = Intent.createChooser(shareIntent, null);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                            mContext.startActivity(intent);
                     }
                     return true;
                 }
