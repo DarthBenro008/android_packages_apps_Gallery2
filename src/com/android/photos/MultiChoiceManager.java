@@ -41,7 +41,7 @@ import com.android.gallery3d.util.GalleryUtils;
 
 import java.util.ArrayList;
 import java.util.List;
-public static final String TAG = "YOUR-TAG-NAME";
+
 
 public class MultiChoiceManager implements MultiChoiceModeListener,
     SelectionManager.SelectedUriSource {
@@ -166,8 +166,8 @@ public class MultiChoiceManager implements MultiChoiceModeListener,
                       PrintHelper printer = new PrintHelper(this);
         try {
             printer.printBitmap("pintJobName",getSelectedShareableUris() );
-        } catch (FileNotFoundException fnfe) {
-            Log.e(TAG, "Error printing an image", fnfe);
+        } catch (Exception e) {
+            Log.e("Hi", "Error printing an image");
         }
                     }
                     return true;
