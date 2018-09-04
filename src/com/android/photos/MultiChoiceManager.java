@@ -162,7 +162,7 @@ public class MultiChoiceManager implements MultiChoiceModeListener,
                     if (shareIntent != null) {
                       PrintHelper printer = new PrintHelper(this);
         try {
-            printer.printBitmap("pintJobName",shareIntent );
+            printer.printBitmap("pintJobName",getSelectedShareableUris() );
         } catch (FileNotFoundException fnfe) {
             Log.e(TAG, "Error printing an image", fnfe);
         }
