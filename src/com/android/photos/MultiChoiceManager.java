@@ -26,6 +26,8 @@ import android.provider.MediaStore.Files.FileColumns;
 import android.util.SparseBooleanArray;
 import android.view.ActionMode;
 import android.view.Menu;
+import android.util.Log;
+
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.AbsListView.MultiChoiceModeListener;
@@ -39,6 +41,7 @@ import com.android.gallery3d.util.GalleryUtils;
 
 import java.util.ArrayList;
 import java.util.List;
+public static final String TAG = "YOUR-TAG-NAME";
 
 public class MultiChoiceManager implements MultiChoiceModeListener,
     SelectionManager.SelectedUriSource {
