@@ -20,6 +20,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.support.v4.print.PrintHelper;
 import android.os.AsyncTask;
 import android.provider.MediaStore.Files.FileColumns;
 import android.util.SparseBooleanArray;
@@ -159,9 +160,12 @@ public class MultiChoiceManager implements MultiChoiceModeListener,
                     mActionMode.finish();
                     Intent shareIntent = mSelectionManager.getShareIntent();
                     if (shareIntent != null) {
-                        Intent intent = Intent.createChooser(shareIntent, null);
-                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                        mContext.startActivity(intent);
+                      PrintHelper printer = new PrintHelper(this);
+        try {
+            printer.printBitmap("pintJobName", mSelectionManager);
+        } catch (FileNotFoundException fnfe) {
+            Log.e(TAG, "Error printing an image", fnfe);
+        }
                     }
                     return true;
                 }
