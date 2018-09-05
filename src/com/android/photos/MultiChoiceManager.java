@@ -163,7 +163,7 @@ public class MultiChoiceManager implements MultiChoiceModeListener,
         MenuItem menuItem = menu.findItem(R.id.menu_share);
         if (menuItem != null) {
             menuItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-                   d.show();
+                   Toast.makeText(mContext,"Listener Attached",Toast.LENGTH_SHORT).show();
                 @Override
                 public boolean onMenuItemClick(MenuItem item) {
                     mActionMode.finish();
