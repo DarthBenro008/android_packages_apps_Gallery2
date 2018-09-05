@@ -169,7 +169,7 @@ public class MultiChoiceManager implements MultiChoiceModeListener,
                                    }
                     Uri selectedimageuri = Uri.parse(completeString);
                     if (shareIntent != null) {
-                    PrintHelper printer = new PrintHelper(this);
+                    PrintHelper printer = new PrintHelper(mContext);
         try {
             printer.printBitmap("printJobName", selectedimageuri);
         } catch (Exception e ) {
