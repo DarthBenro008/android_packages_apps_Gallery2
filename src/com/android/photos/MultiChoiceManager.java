@@ -152,20 +152,23 @@ public class MultiChoiceManager implements MultiChoiceModeListener,
     @Override
     public boolean onCreateActionMode(ActionMode mode, Menu menu) {
         mSelectionManager.setSelectedUriSource(this);
+            Toast.makeText(getApplicationContext(),"URI TARGETS SET",Toast.LENGTH_SHORT).show();  
         mActionMode = mode;
         MenuInflater inflater = mode.getMenuInflater();
         inflater.inflate(R.menu.gallery_multiselect, menu);
         MenuItem menuItem = menu.findItem(R.id.menu_share);
         if (menuItem != null) {
             menuItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+                    Toast.makeText(getApplicationContext(),"Listener Attached",Toast.LENGTH_SHORT).show();  
                 @Override
                 public boolean onMenuItemClick(MenuItem item) {
                     mActionMode.finish();
-                   
+                       Toast.makeText(getApplicationContext(),"Registered Click!",Toast.LENGTH_SHORT).show();  
                   ArrayList<Uri> imageUri = mSelectionManager.getSelectedUris();
                     String completeString = new String();
              for (Uri uri: imageUri) {
             completeString += uri.toString();
+                     Toast.makeText(getApplicationContext(),"Parsed URIS",Toast.LENGTH_SHORT).show();  
                                    }
                     Uri selectedimageuri = Uri.parse(completeString);
                   
