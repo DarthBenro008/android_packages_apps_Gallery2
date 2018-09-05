@@ -161,11 +161,17 @@ public class MultiChoiceManager implements MultiChoiceModeListener,
                 @Override
                 public boolean onMenuItemClick(MenuItem item) {
                     mActionMode.finish();
-                    Intent shareIntent = mSelectionManager.getSelectedUris();
+                    Intent shareIntent = mSelectionManager.getShareIntent();
+                    ArrayList<Uri> imageUri = mSelectionManager.getSelectedUris();
+                    String completeString = new String();
+             for (Uri uri: imageUri) {
+            completeString += uri.toString();
+                                   }
+                    Uri selectedimageuri = Uri.parse(completeString);
                     if (shareIntent != null) {
                     PrintHelper printer = new PrintHelper(this);
         try {
-            printer.printBitmap("printJobName", shareIntent);
+            printer.printBitmap("printJobName", selectedimageuri);
         } catch (Exception e ) {
             Log.e("Hi", "Error printing an image");
         }
