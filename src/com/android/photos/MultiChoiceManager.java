@@ -31,7 +31,7 @@ import android.util.Log;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.AbsListView.MultiChoiceModeListener;
-
+import android.widget.Toast
 import org.codeaurora.gallery.R;
 import com.android.gallery3d.app.TrimVideo;
 import com.android.gallery3d.data.MediaObject;
