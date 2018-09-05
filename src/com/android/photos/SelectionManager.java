@@ -165,7 +165,7 @@ public class SelectionManager {
     }
 
     
-    public void getSelectedUris(){
+    public Uri getSelectedUris(){
     return mCachedShareableUris;
     }
     public void onClearSelection() {
