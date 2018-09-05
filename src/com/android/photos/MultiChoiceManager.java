@@ -31,7 +31,7 @@ import android.util.Log;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.AbsListView.MultiChoiceModeListener;
-import android.widget.Toast
+import android.widget.Toast;
 import org.codeaurora.gallery.R;
 import com.android.gallery3d.app.TrimVideo;
 import com.android.gallery3d.data.MediaObject;
@@ -154,7 +154,7 @@ public class MultiChoiceManager implements MultiChoiceModeListener,
          Toast a=  Toast.makeText(mContext,"Parsed URIS",Toast.LENGTH_SHORT); 
         Toast b = Toast.makeText(mContext,"URI TARGETS SET",Toast.LENGTH_SHORT);  
           Toast c = Toast.makeText(mContext,"Registered Click!",Toast.LENGTH_SHORT); 
-         TOast d = Toast.makeText(mContext,"Listener Attached",Toast.LENGTH_SHORT);  
+         Toast d = Toast.makeText(mContext,"Listener Attached",Toast.LENGTH_SHORT);  
         mSelectionManager.setSelectedUriSource(this);
             
         mActionMode = mode;
