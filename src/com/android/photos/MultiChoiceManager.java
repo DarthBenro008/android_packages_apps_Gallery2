@@ -151,24 +151,28 @@ public class MultiChoiceManager implements MultiChoiceModeListener,
 
     @Override
     public boolean onCreateActionMode(ActionMode mode, Menu menu) {
+         Toast a=  Toast.makeText(mContext,"Parsed URIS",Toast.LENGTH_SHORT); 
+        Toast b = Toast.makeText(mContext,"URI TARGETS SET",Toast.LENGTH_SHORT);  
+          Toast c = Toast.makeText(mContext,"Registered Click!",Toast.LENGTH_SHORT); 
+         TOast d = Toast.makeText(mContext,"Listener Attached",Toast.LENGTH_SHORT);  
         mSelectionManager.setSelectedUriSource(this);
-            Toast.makeText(mContext,"URI TARGETS SET",Toast.LENGTH_SHORT).show();  
+            
         mActionMode = mode;
         MenuInflater inflater = mode.getMenuInflater();
         inflater.inflate(R.menu.gallery_multiselect, menu);
         MenuItem menuItem = menu.findItem(R.id.menu_share);
         if (menuItem != null) {
             menuItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-                    Toast.makeText(mContext,"Listener Attached",Toast.LENGTH_SHORT).show();  
+                   
                 @Override
                 public boolean onMenuItemClick(MenuItem item) {
                     mActionMode.finish();
-                       Toast.makeText(mContext,"Registered Click!",Toast.LENGTH_SHORT).show();  
+                      
                   ArrayList<Uri> imageUri = mSelectionManager.getSelectedUris();
                     String completeString = new String();
              for (Uri uri: imageUri) {
             completeString += uri.toString();
-                     Toast.makeText(mContext,"Parsed URIS",Toast.LENGTH_SHORT).show();  
+                    
                                    }
                     Uri selectedimageuri = Uri.parse(completeString);
                   
